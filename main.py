@@ -22,16 +22,10 @@ group.add_argument("-d","--decode", type=str, help="decode dolphin speak into st
 args = parser.parse_args()
 try:
 	if args.encode:
-		binary = []
-		for charf in sys.argv[2]:
-			binary.append(bin(ord(charf))[2:].zfill(16))
-		print(rgb(196,0,255,''.join(binary).replace('0','E').replace('1','e')))
+		print(rgb(196,0,255,''.join([bin(ord(i))[2:].zfill(16) for i in [char for char in args.encode]]).replace('0','E').replace('1','e')))
 	elif args.decode:
-		chars = []
-		replaced = sys.argv[2].replace("E","0").replace("e","1")
-		for index in range(0, len(replaced), 16):
-			chars.append(chr(int(replaced[index:index+16],2)))
-		print(rgb(196,0,255,''.join(chars)))
+		replaced = args.decode.replace("E","0").replace("e","1")
+		print(rgb(196,0,255,''.join([chr(int(replaced[index:index+16],2)) for index in range(0, len(replaced), 16)])))
 	else:
 		print(rgb(255,0,0,"invalid command :c"))
 except Exception as e:
