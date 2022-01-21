@@ -17,8 +17,8 @@ https://dolphinonkeys.com      _.-~  )
 ~---~~~~----~~~~             ~~\n\n"""))
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument("-e","--encode", type=str, help="encode string into dolphin speak")
-group.add_argument("-d","--decode", type=str, help="decode dolphin speak into string")
+group.add_argument("-e","--encode", type=str, help="translate into dolphin speak")
+group.add_argument("-d","--decode", type=str, help="translate from dolphin speak")
 args = parser.parse_args()
 try:
 	if args.encode:
