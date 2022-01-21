@@ -1,7 +1,7 @@
 import sys, argparse
 def rgb(red,green,blue,text):
 	return '\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m' % (red,green,blue,text)
-print(rgb(247,80,208,"""                                  __
+print(rgb(0,154,255,"""                                  __
 https://dolphinonkeys.com      _.-~  )
                     _..--~~~~,'   ,-/     _
                  .-' . . . .'   ,-','    ,' )
