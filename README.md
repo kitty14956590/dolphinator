@@ -1,3 +1,2 @@
 # dolphinator-py
-I forgor
-https://dolphinonkeys.com/
+I forgor https://dolphinonkeys.com/
