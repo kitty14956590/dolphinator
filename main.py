@@ -1,9 +1,9 @@
 import sys, argparse
 def rgb(red,green,blue,text):
 	return '\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m' % (red,green,blue,text)
-print(rgb(0,154,255,"""                                  __
+print(rgb(0,154,255,"""                                   __
 https://dolphinonkeys.com      _.-~  )
-                    _..--~~~~,'   ,-/     _
+                    _..--~~~~,'   ,-/      _
                  .-' . . . .'   ,-','    ,' )
                ,' . . . _   ,--~,-'__..-'  ,'
              ,' . . .  (@)' ---~~~~      ,'
@@ -13,7 +13,7 @@ https://dolphinonkeys.com      _.-~  )
          :  . . . .       _     /
         .  . . . .          \`-.:
        .  . . ./  - .          )
-      .   . . |  _____..---.._/ __ Seal :3 _
+      .   . . |  _____..---.._/ __ Seal :3 __
 ~---~~~~----~~~~             ~~\n\n"""))
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group(required=True)
