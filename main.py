@@ -22,7 +22,7 @@ group.add_argument("-d","--decode", type=str, help="translate from dolphin speak
 args = parser.parse_args()
 try:
 	if args.encode:
-		print(rgb(196,0,255,''.join(bin(ord(i))[2:].zfill(16)for i in c).replace('0','E').replace('1','e')))
+		print(rgb(196,0,255,''.join(bin(ord(i))[2:].zfill(16)for i in args.decode).replace('0','E').replace('1','e')))
 	elif args.decode:
 		replaced = args.decode.replace("E","0").replace("e","1")
 		print(rgb(196,0,255,''.join(chr(int(replaced[index:index+16],2))for index in range(0,len(replaced),16))))
