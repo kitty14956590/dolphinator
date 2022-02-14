@@ -8,7 +8,7 @@ group.add_argument("-e","--encode", type=str, help="encode string into dolphin s
 group.add_argument("-d","--decode", type=str, help="decode dolphin speak into string")
 parser.add_argument("-n","--no-banner", help="removes the banner :c", action='store_true')
 args = parser.parse_args()
-if args.no_banner:
+if not args.no_banner:
 	print(rgb(0,154,255,"""                                   __
 https://dolphinonkeys.com      _.-~  )
                     _..--~~~~,'   ,-/     _
