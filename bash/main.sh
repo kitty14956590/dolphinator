@@ -36,7 +36,7 @@ if [ "$encode" ]; then
 	string=$encode
 	binary=""
 	for (( i=0; i<${#string}; i++ )) do
-		binary=$binary$(printf "%016d\n" $(echo "obase=2; $(ord "${string:$i:1}")"|bc)) # is bc a bash
+		binary=$binary$(printf "%016d\n" $(echo "obase=2; $(ord "${string:$i:1}")"|bc)) # is bc a bash command?, I think?
 	done
 	binary=${binary//1/e};binary=${binary//0/E} # make this better later (maybe)
 	rgb 196 0 255 "$binary"
