@@ -2,21 +2,6 @@
 import sys, argparse
 def rgb(red,green,blue,text):
 	return '\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m' % (red,green,blue,text)
-if "--no-banner" in
-print(rgb(0,154,255,"""                                   __
-https://dolphinonkeys.com      _.-~  )
-                    _..--~~~~,'   ,-/     _
-                 .-' . . . .'   ,-','    ,' )
-               ,' . . . _   ,--~,-'__..-'  ,'
-             ,' . . .  (@)' ---~~~~      ,'
-            / . . . . '~~             ,-'
-           / . . . . .             ,-'
-          ;  . . . .  - .        ,'
-         :  . . . .       _     /
-        .  . . . .          \`-.:
-       .  . . ./  - .          )
-      .   . . |  _____..---.._/ __ Seal :3 _
-~---~~~~----~~~~             ~~\n\n"""))
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument("-e","--encode", type=str, help="encode string into dolphin speak")
