@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import sys, argparse
 def rgb(red,green,blue,text):
 	return '\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m' % (red,green,blue,text)
