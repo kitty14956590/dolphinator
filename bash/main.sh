@@ -40,7 +40,7 @@ if [ "$encode" ]; then
 	done
 	binary=${binary//1/e};binary=${binary//0/E} # make this better later (maybe)
 	rgb 196 0 255 "$binary"
-else [ "$decode" ]
+elif [ "$decode" ]; then
 	let "e=0,b=0"
 	string=$(chr ${decode:0:16})
 	for (( i=0; i<${#decode}; i++ )) do
