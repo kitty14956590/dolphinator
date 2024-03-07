@@ -1,3 +1,4 @@
+#!/bin/ruby
 require 'optparse'
 options = {}
 OptionParser.new do |opt|

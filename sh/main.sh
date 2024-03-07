@@ -32,7 +32,7 @@ if [ $banner == 1 ]
 then
 	rgb 0 154 255 "                                   __\nhttps://dolphinonkeys.com      _.-~  )\n                    _..--~~~~,'   ,-/     _\n                 .-' . . . .'   ,-','    ,' )\n               ,' . . . _   ,--~,-'__..-'  ,'\n             ,' . . .  (@)' ---~~~~      ,'\n            / . . . . '~~             ,-'\n           / . . . . .             ,-'\n          ;  . . . .  - .        ,'\n         :  . . . .       _     /\n        .  . . . .          \\\`-.:\n       .  . . ./  - .          )\n      .   . . |  _____..---.._/ __ Seal :3 _\n~---~~~~----~~~~             ~~\n\n"
 fi
-if [ "$encode" ]; then
+if [ "$encode" != "" ]; then
 	string=$encode
 	binary=""
 	for (( i=0; i<${#string}; i++ )) do
@@ -40,7 +40,7 @@ if [ "$encode" ]; then
 	done
 	binary=${binary//1/e};binary=${binary//0/E} # make this better later (maybe)
 	rgb 196 0 255 "$binary"
-else [ "$decode" ]
+elif [ "$decode" != "" ]; then
 	let "e=0,b=0"
 	string=$(chr ${decode:0:16})
 	for (( i=0; i<${#decode}; i++ )) do
