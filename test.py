@@ -9,7 +9,6 @@ def rgb (a,b,c,text):
 	return "\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m"%(a,b,c,text)
 ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 for i in glob.glob("./*/main*"):
-	# will run any file named main but just don't remove the priv drop at the top then decide to run it as root
 	test = ansi_escape.sub('', os.popen(i + " -e \"キティa猫咪喵ニャー\" -n 2>&1 0>&1").read()).replace("\n","")
 	if test == "EEeeEEEEeEeEeeEeEEeeEEEEeeEEEeeEEEeeEEEEeEeEEEeeEEEEEEEEEeeEEEEeEeeeEEeeEEeEeEeeEeEeEeEEeEeEeEeEEeEeEeEeeEeeEeEeEEeeEEEEeeEEeEeeEEeeEEEEeeeEEEeeEEeeEEEEeeeeeeEE":
 		print(rgb(0,255,0,"[*] %s passed encode test" % i[2:]))
