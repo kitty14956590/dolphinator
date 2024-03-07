@@ -49,19 +49,21 @@ void encode_dolphinscript(size_t length, const char * string) {
 	char binary[32];
 	int j = 0;
 	int wlength = 1;
+	printf("\033[38;2;%d;%d;%dm", 196, 0, 255);
 	while (wlength > 0) {
 		int len, c;
 		c = 0;
 		len = ustrlen(buf);
 		while (c < len) {
 			ch_to_binary(buf[c], binary);
-			rgb_prints(196, 0, 255, binary);
+			printf("%s", binary);
 			c++;
 		}
 		memset((char *) buf, 0, 64);
 		wlength = mbrtoc16(buf, string + j, length, NULL);
 		j += wlength;
 	}
+	printf("\033[38;2;255;255;255m");
 }
 
 void decode_dolphinscript(size_t length, const char * string) {

@@ -14,13 +14,17 @@ unless options[:banner] then
 	puts
 end
 if options[:encode] then
+	print("\033[38;2;196;0;255m")
 	for char in options[:encode].split("") do
-		rgb(196,0,255,("%016d"%char.ord().to_s(2)).tr("10","eE"))
+		print(("%016d"%char.ord().to_s(2)).tr("10","eE"))
 	end
+	print("\033[38;2;255;255;255m")
 	puts
 elsif options[:decode] then
+	print("\033[38;2;196;0;255m")
 	for char in options[:decode].scan(/.{1,16}/) do
-		rgb(196,0,255,char.tr("eE","10").to_i(2).chr("UTF-8"))
+		print(char.tr("eE","10").to_i(2).chr("UTF-8"))
 	end
+	print("\033[38;2;255;255;255m")
 	puts
 end
