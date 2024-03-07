@@ -71,9 +71,11 @@ void decode_dolphinscript(size_t length, const char * string) {
 		return;
 	}
 	characters = length / 16;
+	printf("\033[38;2;%d;%d;%dm", 196, 0, 255);
 	for (int i = 0; i < characters; i++) {
-		rgb_printc(196, 0, 255, binary_to_ch(string + (i * 16)));
+		printf("%lc", binary_to_ch(string + (i * 16)));
 	}
+	printf("\033[38;2;255;255;255m");
 }
 
 void print_banner() {

@@ -25,18 +25,20 @@ if ($options{e}) {
 	# my @characters = $string =~ /.{1}/g;
 	my $encoded = Encode::decode("UTF-8", $string);
 	my @characters = $encoded =~ /.{1}/g;
+	print(sprintf("\033[38;2;%d;%d;%dm", 196, 0, 255));
 	map {
 		my $binary = sprintf("%0.16b", ord($_));
 		$binary = ($binary =~ s/1/e/rg) =~ s/0/E/rg;
-		rgb_prints(196,0,255, $binary);
+		print($binary);
 	} @characters;
-	print("\n");
+	print("\033[38;2;255;255;255m\n");
 } elsif ($options{d}) {
 	my $string = $options{d};
 	$string = ($string =~ s/e/1/rg) =~ s/E/0/rg;
 	my @characters = $string =~ /.{16}/g;
+	print(sprintf("\033[38;2;%d;%d;%dm", 196, 0, 255));
 	map {
-		rgb_prints(196,0,255,chr(oct("0b$_")));
+		print(chr(oct("0b$_")));
 	} @characters;
-	print("\n");
+	print("\033[38;2;255;255;255m\n");
 }
