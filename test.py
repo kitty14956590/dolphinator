@@ -3,9 +3,12 @@
 
 import glob, os, re
 
-if os.getuid() == 0 or os.geteuid() == 0:
-	os.setuid(65534)
-	os.seteuid(65534)
+try:
+	if os.getuid() == 0 or os.geteuid() == 0:
+		os.setuid(65534)
+		os.seteuid(65534)
+except:
+	pass # windows
 
 def rgb (a,b,c,text):
 	return "\033[38;2;%s;%s;%sm%s\033[38;2;255;255;255m"%(a,b,c,text)
