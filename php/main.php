@@ -53,6 +53,8 @@ if ($flag[0] != '-' || ($flag[1] != 'd' && $flag[1] != 'e')) {
 
 $strings = array_slice($argv, 2);
 
+echo "\033[38;2;" . 196 . ";" . 0 . ";" . 255 . "m";
+
 if (strcmp($flag, "-e") == 0) {
 	foreach ($strings as $arg) {
 		foreach (mb_str_split($arg) as $char) {
@@ -60,7 +62,7 @@ if (strcmp($flag, "-e") == 0) {
 			$binary = base_convert($value[1], 16, 2);
 			$padded = str_pad($binary, 16, "0", STR_PAD_LEFT);
 			$dolphinscript = str_replace(["1", "0"], ["e", "E"], $padded);
-			rgb_print(196, 0, 255, $dolphinscript);
+			echo $dolphinscript;
 		}
 	}
 } else {
@@ -70,9 +72,9 @@ if (strcmp($flag, "-e") == 0) {
 			$binary = str_replace(["e", "E"], ["1", "0"], $char);
 			$codepoint = bindec($binary);
 			$utf8str = mb_chr($codepoint, "UTF-8");
-			rgb_print(196, 0, 255, $utf8str);
+			echo $utf8str;
 		}
 	}
 }
-echo "\n";
+echo "\033[38;2;255;255;255m\n";
 ?>
