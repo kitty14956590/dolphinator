@@ -111,6 +111,9 @@ int main(int argc, char * argv[]) {
 	for (int i = 2; i < argc; i++) {
 		size_t length = strlen(argv[i]);
 		const char * string = argv[i];
+		if (length == 0) {
+			continue;
+		}
 		if (op == ENCODE) {
 			encode_dolphinscript(length, string);
 		} else {
