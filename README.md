@@ -1,3 +1,7 @@
 # dolphinator
-### do;pgjaignsdgjndfngjkdfj
-I forgor https://dolphinonkeys.com/
+### thingys
+
+
+
+i no make https://dolphinonkeys.com/   !!!
+me only make these
