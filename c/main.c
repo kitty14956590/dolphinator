@@ -97,7 +97,7 @@ uint8_t first_zero(uint8_t byte) {
 	return 7 - i;
 }
 
-int utf8toutf16_strlen(char * string) {
+int utf8_strlen(char * string) {
 	int size = strlen(string);
 	int i = 0;
 	int length = 0;
@@ -157,7 +157,7 @@ int do_operation(char * string, int op) {
 	set_colour(0xc400ff);
 	switch (op) {
 		case ENCODE: {
-			int length = utf8toutf16_strlen(string);
+			int length = utf8_strlen(string);
 			uint16_t * utf16 = malloc((length * 2) + 4);
 			uint16_t * old = utf16;
 			utf8toutf16(string, utf16);
