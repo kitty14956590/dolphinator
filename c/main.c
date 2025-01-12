@@ -46,6 +46,7 @@ void rgb_putc(uint32_t colour, char chr) {
 	printc(chr);
 }
 
+// %ls wants a UTF-32 string, we have 16
 void uprint(uint16_t * str) {
 	while (*str) {
 		printf("%lc", *str);
@@ -112,6 +113,7 @@ int utf8toutf16_strlen(char * string) {
 	return length;
 }
 
+// our mini UTF-8 decoder
 void utf8toutf16(char * in, uint16_t * out) {
 	int size = strlen(in);
 	int i = 0;
